@@ -1,0 +1,98 @@
+:root {
+    --logo-dark: #2f2d2e;
+    --logo-blue: #258ee5;
+    --logo-light: #d0d2d1;
+}
+
+/* body and canvas */
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 1000vh;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    z-index: -99;
+    filter: blur(5px);
+}
+
+/* loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+.loader.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loader .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* pages */
+.section {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+}
+
+.content {
+    flex: 1 1 auto;
+    width: 100%;
+
+    color: var(--logo-light) !important;
+    padding-top: 25px;
+}
+
+/* first page: introduction */
+.sec-intro .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    height: auto;
+    width: 8rem;
+}
+
+.avatar {
+    height: auto;
+    width: 10rem;
+    padding-bottom: 50px;
+}
+
+.skip-btn {
+    font-size: 2rem;
+    height: 3em;
+    width: 3em;
+
+    background-color: var(--logo-blue)!important;
+    border-radius: 100%!important;
+
+    align-self: center;
+}
