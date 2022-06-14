@@ -24,7 +24,7 @@ const createScene = async () => {
         alpha: true
     });
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight, false);
     document.body.appendChild(renderer.domElement);
 
     document.body.onresize = () => {
@@ -32,7 +32,7 @@ const createScene = async () => {
         const height = window.innerHeight;
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
+        renderer.setSize(width, height, false);
     };
 
     // setup lighting
