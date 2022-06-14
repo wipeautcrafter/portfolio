@@ -9,11 +9,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const updateReveal = () => {
         fadeEl = fadeEl.filter(el => {
             if (el.getBoundingClientRect().top < document.body.scrollTop + window.innerHeight) {
-                const delay = Math.max(0, lastReveal + 300 - Date.now());
+                const delay = Math.max(0, lastReveal + 400 - Date.now());
                 lastReveal = Date.now() + delay;
 
                 setTimeout(() => {
                     el.classList.add("show");
+                    setTimeout(() => {
+                        el.classList.remove("f");
+                        el.classList.remove("show");
+                    }, 1000);
                 }, delay);
 
                 return false;
