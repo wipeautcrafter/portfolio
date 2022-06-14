@@ -58,7 +58,7 @@ const createScene = async () => {
     mesh.receiveShadow = true;
 
     // smooth camera movement
-    camera.position.z = 10;
+    camera.position.z = 8;
     camera.rotation.z = -0.25 * Math.PI;
     let cameraDistance, cameraRotation;
 
@@ -82,10 +82,10 @@ const createScene = async () => {
         requestAnimationFrame(render);
 
         // camera smooth intro
-        camera.position.z = MathUtils.lerp(camera.position.z, cameraDistance, 0.1);
-        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 100);
+        camera.position.z = MathUtils.lerp(camera.position.z, cameraDistance, 0.05);
+        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 200);
 
-        mesh.rotateOnAxis(new Vector3(0, 1, 0), 0.01);
+        mesh.rotateOnAxis(new Vector3(0, 1, 0), 0.005);
 
         renderer.render(scene, camera);
     }
