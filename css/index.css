@@ -7,15 +7,10 @@
 /* scroll reveal */
 .f, .f::before {
     opacity: 0;
-    transform: translateY(-10px);
-}
-.f.show, .f.show::before {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 1s ease-in-out;
+    transform: translateY(-8px);
 }
 
-/* responsive br */
+/* responsiveness */
 br {
     display: inline;
 }
@@ -29,13 +24,14 @@ br {
 /* icons */
 .icon-header {
     font-size: 2.5rem;
-    margin-bottom: 150px;
+    margin-bottom: 15px;
     color: var(--logo-blue);
 }
 
 /* body and canvas */
 html {
     scroll-snap-type: y mandatory;
+    scroll-snap-stop: normal;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -43,9 +39,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-
-    background: linear-gradient(to top left, #333333, #aaaaaa)!important;
     color: var(--logo-light)!important;
+    background: linear-gradient(to top left, #3a3a3a, #797979 70%, #b4b4b4) !important;
 }
 
 canvas {
@@ -90,27 +85,30 @@ canvas {
     height: 100vh;
     width: 100vw;
 
+    overflow: hidden auto;
+
     display: flex;
     flex-direction: column;
 
     padding: 15px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 .content {
     flex: 1 1 auto;
     width: 100%;
     padding-top: 25px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .content.centered {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* first page: introduction */
+/* first section: introduction */
 .logo {
     height: auto;
     width: 8rem;
@@ -145,4 +143,14 @@ canvas {
 
     color: var(--logo-light);
     align-self: center;
+}
+
+/* second section: skills */
+.progress {
+    background-color: rgba(255, 255, 255, 0.2)!important;
+}
+
+.progress-bar {
+    background-color: var(--logo-light)!important;
+    color: var(--logo-dark)!important;
 }

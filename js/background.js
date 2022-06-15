@@ -14,7 +14,7 @@ const getScrollPosition = () => {
     return document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 };
 
-const createScene = async () => {
+const createScene = async (deltaT) => {
 
     // setup scene
     const scene = new Scene();
@@ -92,7 +92,7 @@ const createScene = async () => {
     function animationFrame() {
         requestAnimationFrame(animationFrame);
 
-        if (Date.now() - lastUpdate > (1000 / 60)) {
+        if (Date.now() - lastUpdate > deltaT) {
             render();
             lastUpdate = Date.now();
         }
