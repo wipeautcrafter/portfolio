@@ -9,7 +9,8 @@ import {
     Vector3,
     DirectionalLight,
     MathUtils,
-} from "./Three/Three.js";
+    AmbientLightProbe,
+} from "./Three.min.js";
 
 const getScrollPosition = () => {
     return document.documentElement.scrollTop / document.documentElement.scrollTopMax;
