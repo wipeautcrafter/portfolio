@@ -1,4 +1,4 @@
-import { GLTFLoader } from './GLTFLoader.js';
+import { GLTFLoader } from './GLTFLoader.min.js';
 import {
     Scene,
     PerspectiveCamera,
