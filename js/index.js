@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    createScene();
     scrollReveal();
 });
 
-createScene();
