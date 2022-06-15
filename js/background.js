@@ -40,7 +40,7 @@ const createScene = async () => {
     const ambientLight = new AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const directionalLight = new DirectionalLight(0xffffff, 2);
+    const directionalLight = new DirectionalLight(0xffffff, 1.5);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
@@ -50,6 +50,7 @@ const createScene = async () => {
 
     /** @type {Mesh} */
     const mesh = gltf.scene.children[0];
+    // mesh.material.color = new Color("#2c3b82");
 
     scene.add(mesh);
     mesh.position.set(0, 0, 0);
@@ -80,18 +81,27 @@ const createScene = async () => {
 
     // render method
     function render() {
-        requestAnimationFrame(render);
-
         // camera smooth intro
-        camera.position.z = MathUtils.lerp(camera.position.z, cameraDistance, 0.05);
-        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 200);
+        camera.position.z = MathUtils.lerp(camera.position.z, cameraDistance, 0.075);
+        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 300);
 
-        mesh.rotateOnAxis(new Vector3(0, 1, 0), 0.005);
+        mesh.rotateOnAxis(new Vector3(0, 1, 0), 0.0075);
 
         renderer.render(scene, camera);
     }
 
-    render();
+    // reliably update at 60 FPS
+    let lastUpdate = 0;
+    function animationFrame() {
+        requestAnimationFrame(animationFrame);
+
+        if (Date.now() - lastUpdate > (1000 / 60)) {
+            render();
+            lastUpdate = Date.now();
+        }
+    }
+
+    animationFrame();
 };
 
 export default createScene;

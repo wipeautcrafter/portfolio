@@ -41,6 +41,9 @@ html {
 body {
     margin: 0;
     padding: 0;
+
+    background: linear-gradient(to top left, #333333, #aaaaaa)!important;
+    color: var(--logo-light)!important;
 }
 
 canvas {
@@ -51,7 +54,7 @@ canvas {
     width: 100vw;
 
     z-index: -99;
-    filter: blur(5px);
+    filter: blur(4px) brightness(0.6);
 }
 
 /* loader */
@@ -95,8 +98,6 @@ canvas {
 .content {
     flex: 1 1 auto;
     width: 100%;
-
-    color: var(--logo-light) !important;
     padding-top: 25px;
 }
 
@@ -116,16 +117,17 @@ canvas {
 .avatar {
     width: 12rem;
     height: 12rem;
-    padding: 20px;
+    padding: 5px;
     border-radius: 100%;
 
-    background: rgba(255, 255, 255, 0.4);
+    background: linear-gradient(to top, var(--text-color), transparent 80%);
 
     margin-bottom: 20px;
 }
 
 .avatar img {
     height: 100%;
+    width: 100%;
     border-radius: 100%;
 }
 
@@ -139,5 +141,6 @@ canvas {
     background-color: var(--logo-blue)!important;
     border-radius: 100%!important;
 
+    color: var(--logo-light);
     align-self: center;
 }
