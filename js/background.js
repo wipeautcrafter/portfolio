@@ -3,17 +3,15 @@ import {
     Scene,
     PerspectiveCamera,
     WebGLRenderer,
-    Color,
     Mesh,
     AmbientLight,
     Vector3,
     DirectionalLight,
     MathUtils,
-    AmbientLightProbe,
 } from "./Three.min.js";
 
 const getScrollPosition = () => {
-    return document.documentElement.scrollTop / document.documentElement.scrollTopMax;
+    return document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 };
 
 const createScene = async () => {
@@ -50,7 +48,6 @@ const createScene = async () => {
 
     /** @type {Mesh} */
     const mesh = gltf.scene.children[0];
-    // mesh.material.color = new Color("#2c3b82");
 
     scene.add(mesh);
     mesh.position.set(0, 0, 0);
