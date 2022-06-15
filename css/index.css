@@ -36,6 +36,7 @@ br {
 /* body and canvas */
 html {
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }
 
 body {
