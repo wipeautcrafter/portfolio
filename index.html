@@ -29,14 +29,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="scroll-snap">
     <div class="loader">
         <div class="spinner-border text-light" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="intro">
         <img class="logo f" src="src/dna.svg" alt="EvoStack">
         <div class="content container text-center centered">
             <div class="avatar f">
@@ -48,8 +48,7 @@
 
         <i class="bi-arrow-down-circle-fill skip-btn f"></i>
     </div>
-
-    <div class="section">
+    <div class="section skip-to" id="about">
         <div class="content centered text-center container-sm">
             <i class="bi-person-lines-fill icon-header f"></i>
             <h1 class="f">Over Mij</h1>
@@ -62,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="skills">
         <div class="content centered text-center container-sm">
             <i class="bi-gear-fill icon-header f"></i>
             <h1 class="f">Mijn Skills</h1>
@@ -139,7 +138,7 @@
             </div>
        </div>
     </div>
-    <div class="section">
+    <div class="section" id="projects">
         <div class="content centered text-center container-sm">
             <i class="bi-archive-fill icon-header f"></i>
             <h1 class="f">Projecten</h1>
@@ -223,7 +222,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="contact">
         <div class="content centered text-center container-sm">
             <i class="bi-megaphone-fill icon-header f"></i>
             <h1 class="f">Contact</h1>

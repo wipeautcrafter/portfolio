@@ -2,7 +2,6 @@
     --logo-dark: #2f2d2e;
     --logo-blue: #258ee5;
     --logo-light: #d0d2d1;
-    --vh: 100vh;
 }
 
 /* icons */
@@ -14,22 +13,33 @@
 
 /* body and canvas */
 html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(to top left, #3a3a3a, #b4b4b4) !important;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden scroll;
+
     color: var(--logo-light)!important;
-    background: linear-gradient(to top left, #3a3a3a, #797979 70%, #b4b4b4) !important;
+    background: transparent!important;
+}
+
+body.scroll-snap {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 canvas {
     position: fixed;
     top: 0;
     left: 0;
+
     height: 100vh;
     width: 100vw;
 
@@ -87,7 +97,7 @@ br {
 
 /* pages */
 .section {
-    min-height: var(--vh);
+    min-height: 100%;
     width: 100vw;
 
     display: flex;
@@ -141,6 +151,10 @@ br {
     cursor: pointer;
     color: var(--logo-light);
     align-self: center;
+}
+
+.skip-btn:hover {
+    color: inherit;
 }
 
 /* second section: skills */

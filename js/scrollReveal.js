@@ -7,9 +7,8 @@ const createScroll = (query, delay, offset) => {
     const updateReveal = () => {
         sections = sections.filter(el => {
             // check if element is in viewport
-            if (el.getBoundingClientRect().top + offset < document.body.scrollTop + window.innerHeight &&
-                el.getBoundingClientRect().bottom - offset > document.body.scrollTop) {
-
+            if (el.getBoundingClientRect().top + offset < window.innerHeight &&
+                el.getBoundingClientRect().bottom - offset > 0) {
                 [...el.querySelectorAll(".f")].forEach((el, i) => {
                     setTimeout(() => {
                         el.style.setProperty("transition", "all 1s ease-in-out");
@@ -17,9 +16,6 @@ const createScroll = (query, delay, offset) => {
 
                         setTimeout(() => {
                             el.style.removeProperty("transition");
-                            if(el.getAttribute("style") === "") {
-                                el.removeAttribute("style");
-                            }
                         }, 1000);
                     }, i * delay);
                 });
@@ -31,7 +27,7 @@ const createScroll = (query, delay, offset) => {
         });
     };
 
-    window.addEventListener("scroll", updateReveal);
+    document.body.addEventListener("scroll", updateReveal);
     updateReveal(); // initial reveal
 };
 

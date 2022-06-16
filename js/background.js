@@ -11,7 +11,7 @@ import {
 } from "./Three.min.js";
 
 const getScrollPosition = () => {
-    return document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    return document.body.scrollTop / (document.body.scrollHeight - document.body.clientHeight);
 };
 
 const createScene = async (deltaT) => {
@@ -68,7 +68,7 @@ const createScene = async (deltaT) => {
         cameraRotation = (0.2 + position * 0.2) * Math.PI;
     };
 
-    document.addEventListener("scroll", onScroll);
+    document.body.addEventListener("scroll", onScroll);
     onScroll();
 
     // remove loader
