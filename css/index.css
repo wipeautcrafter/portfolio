@@ -2,23 +2,7 @@
     --logo-dark: #2f2d2e;
     --logo-blue: #258ee5;
     --logo-light: #d0d2d1;
-}
-
-/* scroll reveal */
-.f, .f::before {
-    opacity: 0;
-    transform: translateY(-8px);
-}
-
-/* responsiveness */
-br {
-    display: inline;
-}
-
-@media (max-width: 700px) {
-    br {
-        display: none;
-    }
+    --vh: 100vh;
 }
 
 /* icons */
@@ -31,7 +15,6 @@ br {
 /* body and canvas */
 html {
     scroll-snap-type: y mandatory;
-    scroll-snap-stop: normal;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -52,6 +35,28 @@ canvas {
 
     z-index: -99;
     filter: blur(4px) brightness(0.6);
+}
+
+/* scroll reveal */
+.f,
+.f::before {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+/* responsiveness */
+br {
+    display: inline;
+}
+
+@media (max-width: 700px) {
+    br {
+        display: none;
+    }
+
+    html {
+        scroll-snap-type: y none;
+    }
 }
 
 /* loader */
@@ -82,7 +87,7 @@ canvas {
 
 /* pages */
 .section {
-    height: 100vh;
+    min-height: var(--vh);
     width: 100vw;
 
     display: flex;
@@ -90,6 +95,7 @@ canvas {
 
     padding: 15px;
     scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 .content {
