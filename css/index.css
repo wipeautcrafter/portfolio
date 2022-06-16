@@ -131,15 +131,8 @@ canvas {
 }
 
 .skip-btn {
-    font-size: 1rem;
-    height: 2em;
-    width: 2em;
-
-    border: none;
-
-    background-color: var(--logo-blue)!important;
-    border-radius: 100%!important;
-
+    font-size: 2rem;
+    cursor: pointer;
     color: var(--logo-light);
     align-self: center;
 }
