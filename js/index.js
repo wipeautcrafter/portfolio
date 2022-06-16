@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
             block: "start"
         });
-        document.body.classList.add("scroll-snap");
+        setTimeout(() => document.body.classList.add("scroll-snap"), 500);
     });
 
     // create scene
