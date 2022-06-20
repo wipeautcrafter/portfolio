@@ -105,7 +105,7 @@ br {
 
     padding: 15px;
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
 }
 
 .content {
