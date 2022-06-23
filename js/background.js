@@ -65,7 +65,7 @@ const createScene = async (deltaT) => {
     const onScroll = () => {
         const position = getScrollPosition();
         cameraDistance = 3.5 + position * 2.5;
-        cameraRotation = (0.2 + position * 0.2) * Math.PI;
+        cameraRotation = (0.2 + position * 0.25) * Math.PI;
     };
 
     document.body.addEventListener("scroll", onScroll);
@@ -80,7 +80,7 @@ const createScene = async (deltaT) => {
     function render() {
         // camera smooth intro
         camera.position.z = MathUtils.lerp(camera.position.z, cameraDistance, 0.075);
-        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 300);
+        camera.rotation.z = MathUtils.lerp(camera.rotation.z, cameraRotation, Math.PI / 150);
 
         mesh.rotateOnAxis(new Vector3(0, 1, 0), 0.0075);
 
